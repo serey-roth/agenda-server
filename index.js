@@ -9,14 +9,10 @@ import projectsRoutes from './routes/projectsRoutes.js'
 import usersRoutes from './routes/usersRoutes.js'
 
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
-app.use(cors());
-app.use((req, res, next) => {
-        res.header('Access-Control-Allow-Origin', '*');
-        next();
-});
 
 dotenv.config();
 

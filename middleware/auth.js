@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken'
 
 const auth = async (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
     try {
         if (!req.headers.authorization) {
             return req;
